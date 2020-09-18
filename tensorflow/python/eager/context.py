@@ -1547,6 +1547,8 @@ class Context(object):
       attr = getattr(rewrite_options, option)
       if attr != 0:
         options[option] = (attr == rewriter_config_pb2.RewriterConfig.ON)
+      else:
+        options[option] = attr
 
     def rewriter_bool(option):
       options[option] = getattr(rewrite_options, option)
